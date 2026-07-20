@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarSettings"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/ocean_blue"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="@string/settings"
+            app:titleTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Profile Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardProfile"
+                style="@style/SettingsCard"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivProfile"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_person"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/CircleImage"
+                        app:strokeColor="@color/ocean_blue"
+                        app:strokeWidth="2dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvUserName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="User Name"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvUserEmail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="user@example.com"
+                            android:textColor="@color/gray"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_forward"
+                        app:tint="@color/gray" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Account Section -->
+            <TextView
+                style="@style/SettingsHeader"
+                android:text="@string/account" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SettingsCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include
+                        android:id="@+id/layoutLanguage"
+                        layout="@layout/item_settings_row"
+                        app:icon="@drawable/ic_language"
+                        app:title="@string/change_language" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Advanced Settings Section -->
+            <TextView
+                style="@style/SettingsHeader"
+                android:text="@string/advanced_settings" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SettingsCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchNotifications"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp"
+                        android:text="@string/enable_notifications"
+                        android:textColor="@color/black"
+                        android:checked="true"
+                        app:thumbTint="@color/ocean_blue"
+                        app:trackTint="@color/ocean_blue_light" />
+
+                    <View style="@style/SettingsDivider" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchDarkMode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp"
+                        android:text="@string/dark_mode"
+                        android:textColor="@color/black"
+                        app:thumbTint="@color/ocean_blue"
+                        app:trackTint="@color/ocean_blue_light" />
+
+                    <View style="@style/SettingsDivider" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchOfflineMode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp"
+                        android:text="@string/offline_mode"
+                        android:textColor="@color/black"
+                        app:thumbTint="@color/ocean_blue"
+                        app:trackTint="@color/ocean_blue_light" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Support & Legal Section -->
+            <TextView
+                style="@style/SettingsHeader"
+                android:text="@string/support" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SettingsCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include
+                        android:id="@+id/layoutContactUs"
+                        layout="@layout/item_settings_row"
+                        app:icon="@drawable/ic_phone"
+                        app:title="@string/contact_us" />
+
+                    <View style="@style/SettingsDivider" />
+
+                    <include
+                        android:id="@+id/layoutAboutUs"
+                        layout="@layout/item_settings_row"
+                        app:icon="@android:drawable/ic_dialog_info"
+                        app:title="@string/about_us" />
+
+                    <View style="@style/SettingsDivider" />
+
+                    <include
+                        android:id="@+id/layoutPrivacyPolicy"
+                        layout="@layout/item_settings_row"
+                        app:icon="@android:drawable/ic_menu_agenda"
+                        app:title="@string/privacy_policy" />
+
+                    <View style="@style/SettingsDivider" />
+
+                    <include
+                        android:id="@+id/layoutHelpFaq"
+                        layout="@layout/item_settings_row"
+                        app:icon="@android:drawable/ic_menu_help"
+                        app:title="@string/help_faq" />
+
+                    <View style="@style/SettingsDivider" />
+
+                    <include
+                        android:id="@+id/layoutRateApp"
+                        layout="@layout/item_settings_row"
+                        app:icon="@android:drawable/btn_star_big_on"
+                        app:title="@string/rate_app" />
+
+                    <View style="@style/SettingsDivider" />
+
+                    <include
+                        android:id="@+id/layoutShareApp"
+                        layout="@layout/item_settings_row"
+                        app:icon="@android:drawable/ic_menu_share"
+                        app:title="@string/share_app" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- App Info Section -->
+            <TextView
+                style="@style/SettingsHeader"
+                android:text="@string/app_info" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SettingsCard">
+
+                <LinearLayout
+                    android:id="@+id/layoutAbout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_app_logo" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/app_name"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvAppVersion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Version 1.0.0"
+                            android:textSize="12sp"
+                            android:textColor="@color/gray" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogout"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/logout"
+                android:textColor="@color/white"
+                android:backgroundTint="#B00020"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_back"
+                app:iconGravity="textStart"
+                app:iconTint="@color/white" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDeleteAccount"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/delete_account"
+                android:textColor="#B00020"
+                app:icon="@android:drawable/ic_menu_delete"
+                app:iconTint="#B00020" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_notifications"
+        android:icon="@android:drawable/ic_popup_reminder"
+        android:title="@string/notifications"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_profile_nav"
+        android:title="@string/profile"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_change_language"
+        android:title="@string/change_language"
+        app:showAsAction="never" />
+</menu>

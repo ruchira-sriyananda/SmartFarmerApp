@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    namespace 'com.example.smartfarmer'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.smartfarmers"
+        minSdk 23
+        targetSdk 35
+        versionCode 4
+        versionName "1.0.4"
+
+        // Optimize: Keep only supported locales
+        resConfigs "en", "si", "ta"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true // Enabled for production
+            shrinkResources true // Removes unused resources
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            ndk {
+                debugSymbolLevel 'FULL'
+            }
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:34.16.0')
+    implementation 'com.google.firebase:firebase-ai'
+    implementation 'com.google.guava:guava:33.6.0-android'
+    implementation 'org.reactivestreams:reactive-streams:1.0.4'
+
+    // Google Sign-In
+    implementation 'com.google.android.gms:play-services-auth:20.7.0'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+
+    // Networking
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.11.0'
+
+    // JSON
+    implementation 'org.json:json:20230227'
+
+    // Loading & UI
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    // Room Database
+    implementation 'androidx.room:room-runtime:2.6.1'
+    annotationProcessor 'androidx.room:room-compiler:2.6.1'
+
+    // Glide for image loading
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
+
+    // Stripe
+    implementation 'com.stripe:stripe-android:23.12.0'
+
+    // Security
+    implementation 'androidx.security:security-crypto:1.1.0-alpha06'
+}

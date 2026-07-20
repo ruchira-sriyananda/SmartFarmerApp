@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/thumb_show"
+        android:roundIcon="@drawable/thumb_show"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SmartFarmer">
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.LanguageSelectionActivity" />
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.RegisterActivity" />
+        <activity android:name=".activities.ForgotPasswordActivity" />
+        <activity android:name=".activities.ProfileActivity" />
+        <activity android:name=".activities.ProfileImageActivity" />
+        <activity android:name=".activities.MarketActivity" />
+        <activity android:name=".activities.CartActivity" />
+        <activity android:name=".activities.OrdersActivity" />
+        <activity android:name=".activities.CommunityActivity" />
+        <activity android:name=".activities.ChatActivity" />
+        <activity android:name=".activities.UserSelectionActivity" />
+        <activity android:name=".activities.GroupDetailsActivity" />
+        <activity android:name=".activities.BarterActivity" />
+        <activity android:name=".activities.CreateBarterActivity" />
+        <activity android:name=".activities.MyBartersActivity" />
+        <activity android:name=".activities.AiAssistantActivity" />
+        <activity android:name=".activities.FullscreenImageActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".activities.SettingsActivity" />
+        <activity android:name=".activities.AboutUsActivity" />
+        <activity android:name=".activities.PrivacyPolicyActivity" />
+        <activity android:name=".activities.ContactUsActivity" />
+        <activity android:name=".activities.NotificationsActivity" />
+    </application>
+
+</manifest>
