@@ -209,7 +209,10 @@
     <string name="barter_hub">பண்டமாற்று மையம்</string>
     <string name="notification_deleted">அறிவிப்பு நீக்கப்பட்டது</string>
     <string name="pay_with_card">அட்டை மூலம் பணம் செலுத்துங்கள் (Stripe)</string>
+    <string name="test_payment_bypass">சோதனை கட்டணம் (Stripe ஐத் தவிர்க்கவும்)</string>
     <string name="location_format">%1$s, இலங்கை</string>
     <string name="default_location">கொழும்பு, இலங்கை</string>
     <string name="use_current_location">தற்போதைய இருப்பிடத்தைப் பயன்படுத்தவும் (GPS)</string>
+    <string name="interested_in_product">வணக்கம், உங்கள் தயாரிப்பில் நான் ஆர்வமாக உள்ளேன்: %s</string>
+    <string name="tagged_product">குறியிடப்பட்ட தயாரிப்பு</string>
 </resources>

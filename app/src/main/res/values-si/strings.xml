@@ -213,7 +213,10 @@
     <string name="barter_hub">හුවමාරු මධ්‍යස්ථානය</string>
     <string name="notification_deleted">දැනුම්දීම මකා දමන ලදී</string>
     <string name="pay_with_card">කාඩ්පතෙන් ගෙවන්න (Stripe)</string>
+    <string name="test_payment_bypass">පරීක්ෂණ ගෙවීම (Stripe මග හැරීම)</string>
     <string name="location_format">%1$s, ශ්‍රී ලංකාව</string>
     <string name="default_location">කොළඹ, ශ්‍රී ලංකාව</string>
     <string name="use_current_location">වත්මන් ස්ථානය භාවිතා කරන්න (GPS)</string>
+    <string name="interested_in_product">ආයුබෝවන්, මම ඔබේ භාණ්ඩය ගැන උනන්දු වෙමි: %s</string>
+    <string name="tagged_product">ටැග් කළ භාණ්ඩය</string>
 </resources>

@@ -150,6 +150,19 @@
             android:textColor="@color/black"
             android:textSize="15sp" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnChatRequest"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+            android:text="Chat with Farmer"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:backgroundTint="@color/ocean_blue"
+            app:cornerRadius="12dp"
+            app:icon="@android:drawable/stat_notify_chat" />
+
         <LinearLayout
             android:id="@+id/layoutRequestActions"
             android:layout_width="match_parent"

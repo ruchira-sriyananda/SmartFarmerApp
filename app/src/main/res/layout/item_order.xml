@@ -94,16 +94,5 @@
                 android:textColor="@color/black"
                 android:textStyle="bold" />
         </LinearLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnTrackOrder"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Track Product Details"
-            android:textAllCaps="false"
-            app:icon="@android:drawable/ic_menu_mylocation" />
-
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

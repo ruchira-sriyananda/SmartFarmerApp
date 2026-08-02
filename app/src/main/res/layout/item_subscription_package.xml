@@ -1,50 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cardPackage"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp"
-    android:clickable="true"
-    android:focusable="true"
-    android:foreground="?attr/selectableItemBackground"
+    android:layout_margin="8dp"
     app:cardCornerRadius="16dp"
-    app:cardElevation="2dp"
-    app:strokeColor="#DDDDDD"
-    app:strokeWidth="2dp">
+    app:cardElevation="4dp"
+    app:strokeColor="#EEEEEE"
+    app:strokeWidth="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="20dp">
 
         <TextView
             android:id="@+id/tvPackageName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Package Name"
+            android:text="Silver Plan"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvPackageDescription"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Package description goes here"
-            android:textColor="@color/black"
+            android:text="Includes 10 ad listings for 30 days"
+            android:textColor="@color/gray"
             android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/tvPackagePrice"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Rs. 0.00"
-            android:textColor="@color/ocean_blue"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvAdType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_ad_badge"
+                android:backgroundTint="#FFF3E0"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:text="Premium"
+                android:textColor="#E65100"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_ad_badge"
+                android:backgroundTint="#E3F2FD"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:text="30 Days"
+                android:textColor="#1565C0"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvFeatures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="• Feature 1\n• Feature 2"
+            android:textColor="#555555"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvPackagePrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rs. 1500.00"
+                android:textColor="@color/ocean_blue"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBuyPackage"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="24dp"
+                android:text="Buy Package"
+                android:textAllCaps="false"
+                app:backgroundTint="@color/ocean_blue"
+                app:cornerRadius="20dp" />
+        </LinearLayout>
+
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

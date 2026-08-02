@@ -1,16 +1,18 @@
-apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
 
 android {
-    namespace 'com.example.smartfarmer'
+    namespace 'com.smartfarmers'
     compileSdk 36
 
     defaultConfig {
         applicationId "com.smartfarmers"
         minSdk 23
         targetSdk 35
-        versionCode 4
-        versionName "1.0.4"
+        versionCode 6
+        versionName "1.0.6"
 
         // Optimize: Keep only supported locales
         resConfigs "en", "si", "ta"
@@ -50,8 +52,8 @@ dependencies {
     implementation 'org.reactivestreams:reactive-streams:1.0.4'
 
     // Google Sign-In
-    implementation 'com.google.android.gms:play-services-auth:20.7.0'
-    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'com.google.android.gms:play-services-auth:21.1.1'
+    implementation 'com.google.android.gms:play-services-location:21.2.0'
 
     // Networking
     implementation 'com.squareup.okhttp3:okhttp:4.11.0'

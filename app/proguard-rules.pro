@@ -40,4 +40,4 @@
 -keep class com.github.ybq.android.spinkit.** { *; }
 
 # Your Models (IMPORTANT: keep your data classes)
--keep class com.example.smartfarmer.models.** { *; }
+-keep class com.smartfarmers.models.** { *; }
