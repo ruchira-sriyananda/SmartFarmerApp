@@ -30,11 +30,11 @@ All data collected by the Smart Farmer app is encrypted in transit using industr
 We provide users with full control over their data:
 
 *   **In-App Deletion:** You can delete your account and all associated data at any time by navigating to **Settings > Delete Account** within the app.
-*   **Web Request:** If you cannot access the app, you may request account and data deletion by sending an email to **support@smartfarmer.lk**.
+*   **Web Request:** If you cannot access the app, you may request account and data deletion by sending an email to **ruchirasriyananda@outlook.com**.
 *   **Types of Data Deleted:** Upon request, we will permanently delete your profile information, posts, comments, and history from our active databases.
 
 ## 5. Contact Us
 
 If you have any questions about this Privacy Policy, please contact us at:
-*   Email: support@smartfarmer.lk
+*   Email: ruchirasriyananda@outlook.com
 *   Website: https://github.com/ruchira-sriyananda/SmartFarmerApp
