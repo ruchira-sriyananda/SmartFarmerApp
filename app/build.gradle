@@ -10,9 +10,9 @@ android {
     defaultConfig {
         applicationId "com.smartfarmers"
         minSdk 23
-        targetSdk 35
-        versionCode 6
-        versionName "1.0.6"
+        targetSdk 36
+        versionCode 8
+        versionName "1.0.8"
 
         // Optimize: Keep only supported locales
         resConfigs "en", "si", "ta"
@@ -79,4 +79,9 @@ dependencies {
 
     // Security
     implementation 'androidx.security:security-crypto:1.1.0-alpha06'
+
+    // Markdown Rendering
+    implementation "io.noties.markwon:core:4.6.2"
+    implementation "io.noties.markwon:ext-tables:4.6.2"
+    implementation "io.noties.markwon:ext-strikethrough:4.6.2"
 }

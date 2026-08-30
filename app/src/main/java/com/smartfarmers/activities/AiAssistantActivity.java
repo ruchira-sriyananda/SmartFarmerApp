@@ -57,7 +57,7 @@ public class AiAssistantActivity extends BaseActivity {
             List<ChatMessage> history = aiMessageDao.getAllMessages();
             runOnUiThread(() -> {
                 if (history.isEmpty()) {
-                    addMessage("Hello! I am your Farmer AI assistant powered by Llama 3. How can I help you with your crops today?", false, false);
+                    addMessage("Hello! I am your Farmer AI assistant. How can I help you with your crops today?", false, false);
                 } else {
                     messages.addAll(history);
                     adapter.notifyDataSetChanged();
@@ -95,7 +95,7 @@ public class AiAssistantActivity extends BaseActivity {
         addMessage(text, true);
         etMessage.setText("");
         
-        callGroqApi(text);
+        callGroqApi();
     }
 
     private void addMessage(String content, boolean isUser) {
@@ -115,27 +115,40 @@ public class AiAssistantActivity extends BaseActivity {
         }
     }
 
-    private void callGroqApi(String userPrompt) {
+    private void callGroqApi() {
         progressBar.setVisibility(View.VISIBLE);
         btnSend.setEnabled(false);
 
         try {
             JSONObject json = new JSONObject();
-            json.put("model", "llama-3.3-70b-versatile");
+            // Switched to the high-performance successor model: openai/gpt-oss-120b
+            // This avoids the 404 error and provides the best experience.
+            json.put("model", "openai/gpt-oss-120b");
             
             JSONArray messagesArr = new JSONArray();
             
             // System instruction
             JSONObject systemMsg = new JSONObject();
             systemMsg.put("role", "system");
-            systemMsg.put("content", "You are an expert agricultural assistant. Provide helpful farming advice.");
+            systemMsg.put("content", "You are an expert agricultural assistant. Provide clear, direct, and highly accurate farming advice. " +
+                    "Start with a concise direct answer. Use bullet points for steps and headers for different sections. " +
+                    "Use tables only when comparing items or showing technical data. " +
+                    "Detect the language of the user's message and respond in that same language (e.g., Sinhala for Sinhala queries). " +
+                    "Avoid unnecessary conversational filler and focus on practical, actionable steps for a farmer.");
             messagesArr.put(systemMsg);
             
-            // User prompt
-            JSONObject userMsg = new JSONObject();
-            userMsg.put("role", "user");
-            userMsg.put("content", userPrompt);
-            messagesArr.put(userMsg);
+            // Add conversation history (last 5 messages) for context
+            // messages list already contains the message just added by addMessage(text, true)
+            synchronized (messages) {
+                int historyStart = Math.max(0, messages.size() - 6);
+                for (int i = historyStart; i < messages.size(); i++) {
+                    ChatMessage msg = messages.get(i);
+                    JSONObject historyMsg = new JSONObject();
+                    historyMsg.put("role", msg.isUser() ? "user" : "assistant");
+                    historyMsg.put("content", msg.getContent());
+                    messagesArr.put(historyMsg);
+                }
+            }
             
             json.put("messages", messagesArr);
 
@@ -170,6 +183,7 @@ public class AiAssistantActivity extends BaseActivity {
                         }
                     } else {
                         showError("API Error: " + response.code());
+                        android.util.Log.e("GroqAPI", "Error Response: " + responseBody);
                     }
                     runOnUiThread(() -> {
                         progressBar.setVisibility(View.GONE);
